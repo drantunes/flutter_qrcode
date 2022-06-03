@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_qrcode/pages/qrcode_page.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,14 +19,14 @@ class App extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             primary: Colors.tealAccent,
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 36),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 36),
             onPrimary: Colors.black,
-            textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
           ),
         ),
       ),
       themeMode: ThemeMode.dark,
-      home: QRCodePage(),
+      home: const QRCodePage(),
     );
   }
 }

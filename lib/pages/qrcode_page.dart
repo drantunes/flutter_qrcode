@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class QRCodePage extends StatefulWidget {
-  QRCodePage({Key? key}) : super(key: key);
+  const QRCodePage({Key? key}) : super(key: key);
 
   @override
-  _QRCodePageState createState() => _QRCodePageState();
+  State<QRCodePage> createState() => _QRCodePageState();
 }
 
 class _QRCodePageState extends State<QRCodePage> {
@@ -39,7 +39,7 @@ class _QRCodePageState extends State<QRCodePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -47,16 +47,16 @@ class _QRCodePageState extends State<QRCodePage> {
           children: [
             if (ticket != '')
               Padding(
-                padding: EdgeInsets.only(bottom: 24.0),
+                padding: const EdgeInsets.only(bottom: 24.0),
                 child: Text(
                   'Ticket: $ticket',
-                  style: TextStyle(fontSize: 20),
+                  style: const TextStyle(fontSize: 20),
                 ),
               ),
             ElevatedButton.icon(
               onPressed: readQRCode,
-              icon: Icon(Icons.qr_code),
-              label: Text('Validar'),
+              icon: const Icon(Icons.qr_code),
+              label: const Text('Validar'),
             ),
           ],
         ),
